@@ -31,7 +31,18 @@ def ident( matrix ):
 #multiply m1 by m2, modifying m2 to be the product
 #m1 * m2 -> m2
 def matrix_mult( m1, m2 ):
-    pass
+    end = [] #temporarily hold the product, then will set m2 to this
+    for c in range( len(m2[0]) ):#number of cols of end matrix is the number of cols in m2
+        end.append( [] )
+        for r in range( len(m1) ):#number of rows of end matrix is the number of rows in m1
+            end[c].append( 0 )
+    print_matrix(end) #*************************************************FOR TESTING*****
+
+    # 
+    # sum = 0
+    # for r in range(len(m2)):
+    #     sum += m1[]
+
 
 
 
