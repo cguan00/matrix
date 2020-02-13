@@ -13,6 +13,9 @@ matrix[3] = ["x3", "y3", "z3", 1]
 
 
 print_matrix(matrix)
+print("\n")
+ident(matrix)
+print_matrix(matrix)
 
 
 #
