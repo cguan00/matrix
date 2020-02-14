@@ -12,11 +12,33 @@ import math
 #print the matrix such that it looks like
 #the template in the top comment
 def print_matrix( matrix ):
+    xCors = ""
+    yCors = ""
+    zCors = ""
+    nums = ""
     for i in range(len(matrix)):
-        line = ""
-        for j in range(len(matrix[i])):
-            line += str(matrix[j][i]) + "\t"
-        print(line)
+        xCors += str(matrix[i][0]) + "\t"
+        yCors += str(matrix[i][1]) + "\t"
+        zCors += str(matrix[i][2]) + "\t"
+        nums += str(matrix[i][3]) + "\t"
+        # xCors.append(matrix[i][0])
+        # yCors.append(matrix[i][1])
+        # zCors.append(matrix[i][2])
+        # nums.append(matrix[i][3])
+
+    # xCorsStr = ""
+    # for i in range(len(xCors)):
+    #     print(str(xCors[i]) + "\t")
+    # for i in range(len(yCors)):
+    #     print(str(yCors[i]) + "\t")
+    # for i in range(len(zCors)):
+    #     print(str(zCors[i]) + "\t")
+    # for i in range(len(nums)):
+    #     print(str(nums[i]) + "\t")
+    print(xCors)
+    print(yCors)
+    print(zCors)
+    print(nums)
 
 #turn the paramter matrix into an identity matrix
 #you may assume matrix is square
@@ -38,7 +60,7 @@ def matrix_mult( m1, m2 ):
             end[c].append( 0 )
     print_matrix(end) #*************************************************FOR TESTING*****
 
-    # 
+    #
     # sum = 0
     # for r in range(len(m2)):
     #     sum += m1[]
