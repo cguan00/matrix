@@ -21,20 +21,6 @@ def print_matrix( matrix ):
         yCors += str(matrix[i][1]) + "\t"
         zCors += str(matrix[i][2]) + "\t"
         nums += str(matrix[i][3]) + "\t"
-        # xCors.append(matrix[i][0])
-        # yCors.append(matrix[i][1])
-        # zCors.append(matrix[i][2])
-        # nums.append(matrix[i][3])
-
-    # xCorsStr = ""
-    # for i in range(len(xCors)):
-    #     print(str(xCors[i]) + "\t")
-    # for i in range(len(yCors)):
-    #     print(str(yCors[i]) + "\t")
-    # for i in range(len(zCors)):
-    #     print(str(zCors[i]) + "\t")
-    # for i in range(len(nums)):
-    #     print(str(nums[i]) + "\t")
     print(xCors)
     print(yCors)
     print(zCors)
@@ -53,17 +39,64 @@ def ident( matrix ):
 #multiply m1 by m2, modifying m2 to be the product
 #m1 * m2 -> m2
 def matrix_mult( m1, m2 ):
-    end = [] #temporarily hold the product, then will set m2 to this
-    for c in range( len(m2[0]) ):#number of cols of end matrix is the number of cols in m2
-        end.append( [] )
-        for r in range( len(m1) ):#number of rows of end matrix is the number of rows in m1
-            end[c].append( 0 )
-    print_matrix(end) #*************************************************FOR TESTING*****
+    rows = len(m1) #number of rows in the end product is the number of rows in m1
+    cols = len(m2[0]) #number of cols in the end product is the number of cols in m2
+    print("ROWS: " + str(rows))
+    print("COLS: " + str(cols))
 
-    #
-    # sum = 0
-    # for r in range(len(m2)):
-    #     sum += m1[]
+    #FIRST ROW * FIRST COL
+    sum1 = 0
+    for i in range(rows + 1):
+        sum1 += m1[0][i] * m2[i][0]
+
+    print("SUM1: " + str(sum1))
+
+    #FIRST ROW * SECOND COL
+    sum2 = 0
+    for i in range(rows + 1):
+        sum2 += m1[0][i] * m2[i][1]
+
+    print("SUM2: " + str(sum2))
+
+    #SECOND ROW * FIRST COL
+    sum3 = 0
+    for i in range(rows + 1):
+        sum3 += m1[1][i] * m2[i][0]
+
+    print("SUM3: " + str(sum3))
+
+    #SECOND ROW * SECOND COL
+    sum4 = 0
+    for i in range(rows + 1):
+        sum4 += m1[1][i] * m2[i][1]
+
+    print("SUM4: " + str(sum4))
+
+    for a in range(rows * cols):
+        sum = 0
+        for i in range(cols):
+            for j in range(rows):
+                if j >= rows and i >= cols:
+                    sum += m1[j-1][i-1] * m2[i-1][j-1]
+                elif j >= rows:
+                    sum += m1[j-1][i] * m2[i][j-1]
+                elif i >= cols:
+                    sum += m1[j][i-1] * m2[i-1][j]
+                else:
+                    sum += m1[j][i] * m2[i][j]
+        print(sum)
+
+
+
+
+
+
+    # for a in range(rows * cols):
+    #     sum = 0
+    #     for i in range(rows + 1): #offset by 1
+    #         for j in range(cols + 1):
+    #             sum += m1[j][i] * m2[i][j]
+    #     print(str(sum))
 
 
 
