@@ -3,54 +3,61 @@ from draw import *
 from matrix import *
 
 screen = new_screen()
-color = [ 0, 255, 0 ]
+color = [ 0, 255, 255 ]
 matrix = new_matrix()
 
-# matrix[0] = ["x0", "y0", "z0", 1]
-# matrix[1] = ["x1", "y1", "z1", 1]
-# matrix[2] = ["x2", "y2", "z2", 1]
-# matrix[3] = ["x3", "y3", "z3", 1]
+m1 = [[1,1,1,1], [1,1,1,1], [1,1,1,1], [1,1,1,1]]
+m2 = []
+print("Testing add_edge. Adding (1, 2, 3), (4, 5, 6) m2 =")
+add_edge(m2, 1, 2, 3, 4, 5, 6)
+print_matrix(m2)
+print("\n")
 
+print("Testing ident. m1 =")
+ident(m1)
+print_matrix(m1)
+print("\n")
 
-#testing print_matrix and ident
-# print_matrix(matrix)
-# print("\n")
-# ident(matrix)
-# print_matrix(matrix)
-# print("\n")
-
-#testing print_matrix for non-square matricies
-# test = [
-#     ["x0", "y0", "z0", 1],
-#     ["x1", "y1", "z1", 1],
-#     ["x2", "y2", "z2", 1],
-#     ["x3", "y3", "z3", 1],
-#     ["x4", "y4", "z4", 1],
-#     ["x5", "y5", "z5", 1],
-#     ["x6", "y6", "z6", 1],
-#     ["x7", "y7", "z7", 1],
-# ]
-# print_matrix(test)
-
-
-
-
-
-m1 = [
-    [1, 2, 3],
-    [4, 5, 6]
-    ]
-
-m2 = [
-    [7, 8],
-    [9, 10],
-    [11, 12]
-    ]
-
+print("Testing Matrix mult. m1 * m2 =")
 matrix_mult(m1, m2)
+print_matrix(m2)
+print("\n")
+
+
+print("Testing Matrix mult. m1 =")
+m1 = [[1,2,3,1], [4,5,6,1], [7,8,9,1], [10,11,12,1]]
+print_matrix(m1)
+print("\n")
+
+print("Testing Matrix mult. m1 * m2 =")
+matrix_mult(m1, m2)
+print_matrix(m2)
+print("\n")
+
+x = 0
+y = 0
+for i in range(10):
+    add_edge(matrix, x, y, 0, x + 100, y, 0)
+    add_edge(matrix, x + 100, y, 0, x + 100, y + 100, 0)
+    add_edge(matrix, x + 100, y + 100, 0, x, y + 100, 0)
+    add_edge(matrix, x, y + 100, 0, x, y, 0)
+
+    x += 50
+    y += 50
+
+
+x = 0
+y = 500
+for i in range(10):
+    add_edge(matrix, x, y, 0, x + 100, y, 0)
+    add_edge(matrix, x + 100, y, 0, x + 100, y + 100, 0)
+    add_edge(matrix, x + 100, y + 100, 0, x, y + 100, 0)
+    add_edge(matrix, x, y + 100, 0, x, y, 0)
+
+    x += 50
+    y -= 50
 
 
 
-
-# draw_lines( matrix, screen, color )
-# display(screen)
+draw_lines( matrix, screen, color )
+display(screen)

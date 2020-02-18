@@ -39,67 +39,14 @@ def ident( matrix ):
 #multiply m1 by m2, modifying m2 to be the product
 #m1 * m2 -> m2
 def matrix_mult( m1, m2 ):
-    rows = len(m1) #number of rows in the end product is the number of rows in m1
-    cols = len(m2[0]) #number of cols in the end product is the number of cols in m2
-    print("ROWS: " + str(rows))
-    print("COLS: " + str(cols))
-
-    #FIRST ROW * FIRST COL
-    sum1 = 0
-    for i in range(rows + 1):
-        sum1 += m1[0][i] * m2[i][0]
-
-    print("SUM1: " + str(sum1))
-
-    #FIRST ROW * SECOND COL
-    sum2 = 0
-    for i in range(rows + 1):
-        sum2 += m1[0][i] * m2[i][1]
-
-    print("SUM2: " + str(sum2))
-
-    #SECOND ROW * FIRST COL
-    sum3 = 0
-    for i in range(rows + 1):
-        sum3 += m1[1][i] * m2[i][0]
-
-    print("SUM3: " + str(sum3))
-
-    #SECOND ROW * SECOND COL
-    sum4 = 0
-    for i in range(rows + 1):
-        sum4 += m1[1][i] * m2[i][1]
-
-    print("SUM4: " + str(sum4))
-
-    for a in range(rows * cols):
-        sum = 0
-        for i in range(cols):
-            for j in range(rows):
-                if j >= rows and i >= cols:
-                    sum += m1[j-1][i-1] * m2[i-1][j-1]
-                elif j >= rows:
-                    sum += m1[j-1][i] * m2[i][j-1]
-                elif i >= cols:
-                    sum += m1[j][i-1] * m2[i-1][j]
-                else:
-                    sum += m1[j][i] * m2[i][j]
-        print(sum)
-
-
-
-
-
-
-    # for a in range(rows * cols):
-    #     sum = 0
-    #     for i in range(rows + 1): #offset by 1
-    #         for j in range(cols + 1):
-    #             sum += m1[j][i] * m2[i][j]
-    #     print(str(sum))
-
-
-
+    temp = new_matrix(cols = len(m2))
+    for r in range(len(m2)):
+        for c in range(len(m1[0])):
+            for x in range(len(m1)):
+                temp[r][c] += m2[r][x] * m1[x][c]
+    for r in range(len(temp)):
+        for c in range(len(temp[0])):
+            m2[r][c] = temp[r][c]
 
 
 def new_matrix(rows = 4, cols = 4):
