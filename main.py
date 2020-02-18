@@ -34,17 +34,6 @@ matrix_mult(m1, m2)
 print_matrix(m2)
 print("\n")
 
-x = 0
-y = 0
-for i in range(10):
-    add_edge(matrix, x, y, 0, x + 100, y, 0)
-    add_edge(matrix, x + 100, y, 0, x + 100, y + 100, 0)
-    add_edge(matrix, x + 100, y + 100, 0, x, y + 100, 0)
-    add_edge(matrix, x, y + 100, 0, x, y, 0)
-
-    x += 50
-    y += 50
-
 
 x = 0
 y = 500
@@ -56,6 +45,19 @@ for i in range(10):
 
     x += 50
     y -= 50
+
+
+x = 0
+y = 0
+for i in range(5):
+    add_edge(matrix, x, y, 0, x + 100, y, 0)
+    add_edge(matrix, x + 100, y, 0 , x + 50, y + 50, 0)
+    add_edge(matrix, x + 50, y + 50, 0 , x, y, 0)
+
+    x += 100
+
+
+
 
 
 
