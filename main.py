@@ -34,28 +34,56 @@ matrix_mult(m1, m2)
 print_matrix(m2)
 print("\n")
 
+#
+# x = 0
+# y = 500
+# for i in range(10):
+#     add_edge(matrix, x, y, 0, x + 100, y, 0)
+#     add_edge(matrix, x + 100, y, 0, x + 100, y + 100, 0)
+#     add_edge(matrix, x + 100, y + 100, 0, x, y + 100, 0)
+#     add_edge(matrix, x, y + 100, 0, x, y, 0)
+#
+#     x += 50
+#     y -= 50
+#
+# x = 0
+# y = 250
+# for i in range(10):
+#     add_edge(matrix, x, y, 0, x + 100, y, 0)
+#     add_edge(matrix, x + 100, y, 0, x + 100, y + 100, 0)
+#     add_edge(matrix, x + 100, y + 100, 0, x, y + 100, 0)
+#     add_edge(matrix, x, y + 100, 0, x, y, 0)
+#
+#     x += 50
+#     y -= 50
+#
+# x = 200
+# y = 500
+# for i in range(10):
+#     add_edge(matrix, x, y, 0, x + 100, y, 0)
+#     add_edge(matrix, x + 100, y, 0, x + 100, y + 100, 0)
+#     add_edge(matrix, x + 100, y + 100, 0, x, y + 100, 0)
+#     add_edge(matrix, x, y + 100, 0, x, y, 0)
+#
+#     x += 50
+#     y -= 50
 
-x = 0
-y = 500
-for i in range(10):
-    add_edge(matrix, x, y, 0, x + 100, y, 0)
-    add_edge(matrix, x + 100, y, 0, x + 100, y + 100, 0)
-    add_edge(matrix, x + 100, y + 100, 0, x, y + 100, 0)
-    add_edge(matrix, x, y + 100, 0, x, y, 0)
+#
+# x = 0
+# y = 0
+# for i in range(5):
+#     add_edge(matrix, x, y, 0, x + 100, y, 0)
+#     add_edge(matrix, x + 100, y, 0 , x + 50, y + 50, 0)
+#     add_edge(matrix, x + 50, y + 50, 0 , x, y, 0)
+#
+#     x += 100
 
-    x += 50
-    y -= 50
+# for i in range(10,50):
+#     for j in range(150,175):
+#         add_edge(matrix, i * j, i / j, 0, i % j, i + j, 0)
 
-
-x = 0
-y = 0
-for i in range(5):
-    add_edge(matrix, x, y, 0, x + 100, y, 0)
-    add_edge(matrix, x + 100, y, 0 , x + 50, y + 50, 0)
-    add_edge(matrix, x + 50, y + 50, 0 , x, y, 0)
-
-    x += 100
-
+for i in range(0,300):
+    add_edge(matrix, i + 350, i % 500, 0, i % 500, i + 20, 0)
 
 
 
